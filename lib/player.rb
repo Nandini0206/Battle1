@@ -2,6 +2,8 @@ class Player
 
   START_HIT_POINTS = 100
 
+  attr_reader :name, :hitpoints
+
   def initialize(name)
     @name = name
     @hitpoints = START_HIT_POINTS
@@ -11,16 +13,12 @@ class Player
     name
   end
 
-  def attack
+  def attack(player)
+    player.reduce_hitpoints
+  end
+
+  def reduce_hitpoints
     @hitpoints -= 10
   end
-
-  def hit_points
-    hitpoints
-  end
-
-  private
-
-  attr_reader :name, :hitpoints
 
 end

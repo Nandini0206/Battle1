@@ -6,11 +6,11 @@
   </head>
   <body>
     <div>
-      <p>Player 1: <%= @player1 %></p>
-      <p>Player 2: <%= @player2 %> HP:<%= @player2_hitpoints %></p>
+      <p>Player 1: <%= @player1.return_name %></p>
+      <p>Player 2: <%= @player2.return_name %> HP:<%= @player2.hitpoints %></p>
     </div>
     <div>
-      <p><%= @player2 %> attacked!</p>
+      <p><%= @player2.return_name %> attacked!</p>
     </div>
   </body>
 </html>

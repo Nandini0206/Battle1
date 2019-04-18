@@ -1,22 +1,31 @@
 require 'player'
+
 describe Player do
-let(:subject){ described_class.new("name") }
+let(:nad) { described_class.new("Nad") }
+let(:elle) { described_class.new("Elle") }
 
   describe '#return_name' do
     it 'returns the players name' do
-      expect(subject.return_name).to eq "name"
+      expect(nad.return_name).to eq "Nad"
+    end
+  end
+
+  describe '#reduce_hitpoints' do
+    it 'reduces players HPs' do
+      expect{nad.reduce_hitpoints}.to change{nad.hitpoints}.by(-10)
     end
   end
 
   describe '#attack' do
-    it 'reduces players HPs' do
-      expect{subject.attack}.to change{subject.hit_points}.by(-10)
+    it 'reduces another players HP' do
+      expect(elle).to receive(:reduce_hitpoints)
+      nad.attack(elle)
     end
   end
 
   describe '#hit_points' do
     it 'returns the players hit points' do
-      expect(subject.hit_points).to eq described_class::START_HIT_POINTS
+      expect(nad.hitpoints).to eq described_class::START_HIT_POINTS
     end
   end
 
