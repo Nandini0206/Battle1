@@ -1,5 +1,5 @@
 class Game
   def attack(player)
-    player.hitpoints -= 10
+    player.reduce_hitpoints
   end
 end

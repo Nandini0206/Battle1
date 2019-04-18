@@ -1,8 +1,8 @@
 require 'player'
 
 describe Player do
-let(:nad) { described_class.new("Nad") }
-let(:elle) { described_class.new("Elle") }
+  let(:nad) { described_class.new("Nad") }
+  let(:elle) { described_class.new("Elle") }
 
   describe '#return_name' do
     it 'returns the players name' do
@@ -16,12 +16,6 @@ let(:elle) { described_class.new("Elle") }
     end
   end
 
-  describe '#attack' do
-    it 'reduces another players HP' do
-      expect(elle).to receive(:reduce_hitpoints)
-      nad.attack(elle)
-    end
-  end
 
   describe '#hit_points' do
     it 'returns the players hit points' do
